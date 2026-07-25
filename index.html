@@ -224,6 +224,7 @@
             display: flex;
             flex-direction: column;
             gap: 24px;
+            min-width: 0; /* Empêche les débordements Flexbox */
         }
 
         .card {
@@ -285,15 +286,66 @@
             color: var(--text-main);
         }
 
-        /* Styles d'images dans les projets */
+        /* --- Style du Carrousel des Projets --- */
+        .carousel-container {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            padding-bottom: 16px;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        /* Personnalisation de la barre de défilement du carrousel */
+        .carousel-container::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .carousel-container::-webkit-scrollbar-track {
+            background: var(--bg-main);
+            border-radius: 4px;
+        }
+
+        .carousel-container::-webkit-scrollbar-thumb {
+            background: var(--border);
+            border-radius: 4px;
+        }
+
+        .carousel-container::-webkit-scrollbar-thumb:hover {
+            background: var(--accent);
+        }
+
+        .project-card {
+            flex: 0 0 350px; /* Largeur fixe pour chaque carte */
+            scroll-snap-align: start;
+            background-color: rgba(15, 23, 42, 0.6);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .project-card h3 {
+            font-size: 1.05rem;
+            color: var(--text-main);
+            margin-bottom: 10px;
+        }
+
+        .project-card p {
+            font-size: 0.9rem;
+            margin-bottom: 14px;
+            flex-grow: 1;
+        }
+
         .project-img {
             width: 100%;
-            max-width: 600px;
-            height: auto;
+            height: 180px;
+            object-fit: cover;
             border-radius: 8px;
             border: 1px solid var(--border);
-            margin-top: 12px;
-            display: block;
+            margin-top: auto;
         }
 
         /* Skills Tags */
@@ -335,6 +387,10 @@
 
             .charts-container {
                 grid-template-columns: 1fr;
+            }
+
+            .project-card {
+                flex: 0 0 85%; /* Plus large sur écran mobile */
             }
         }
     </style>
@@ -419,29 +475,36 @@
                 </ul>
             </section>
 
-            <!-- Projets -->
+            <!-- Projets (Mode Carrousel Défilement Horizontal) -->
             <section class="card">
                 <h2>Projets</h2>
-                <ul class="timeline-list">
-                    <li>
-                        <b>2024 : Expert Data-Scientist - Expertise France - Union Européenne 🇪🇺 - DGID</b><br>
-                        Participation au projet <a href="https://www.lesopportunites.com/opportunite/senegal/avis-de-recrutement/systeme-dinformation/expertise-france-recrute-un-expert-data-scientist-a-dakar-au-senegal/" target="_blank">Datamining</a> dans le cadre du recrutement par Expertise France en tant qu'Expert Data-Scientist basé à Dakar, Sénégal pour la détection des fraudes à la déclaration des impôts grâce au machine learning.
-                        <br>
+                <div class="carousel-container">
+                    
+                    <div class="project-card">
+                        <h3>2024 : Expert Data-Scientist - Expertise France - UE 🇪🇺 - DGID</h3>
+                        <p>
+                            Participation au projet <a href="https://www.lesopportunites.com/opportunite/senegal/avis-de-recrutement/systeme-dinformation/expertise-france-recrute-un-expert-data-scientist-a-dakar-au-senegal/" target="_blank">Datamining</a> basé à Dakar pour la détection des fraudes à la déclaration des impôts grâce au machine learning.
+                        </p>
                         <img src="https://miro.medium.com/v2/1*tXzKx2LzJkN4KZ7tOhowjA.gif" alt="Détection de fraude fiscale - Expertise France / DGID" class="project-img">
-                    </li>
-                    <li>
-                        <b>Neural Net Numpy (Package Open Source PyPI)</b><br>
-                        Conception et développement d'une librairie complète de réseaux de neurones construite entièrement <i>from scratch</i> avec NumPy. Package disponible et téléchargeable publiquement sur <a href="https://test.pypi.org/project/neural-net-numpy/" target="_blank">Test PyPI</a>.
-                        <br>
+                    </div>
+
+                    <div class="project-card">
+                        <h3>Neural Net Numpy (Package PyPI)</h3>
+                        <p>
+                            Conception et développement d'une librairie complète de réseaux de neurones construite entièrement <i>from scratch</i> avec NumPy. Téléchargeable sur <a href="https://test.pypi.org/project/neural-net-numpy/" target="_blank">Test PyPI</a>.
+                        </p>
                         <img src="https://i.ibb.co/47VcR80/nn.png" alt="Neural Net Numpy PyPI Package" class="project-img">
-                    </li>
-                    <li>
-                        <b>Crawling Italian Green Pass Debate (Analyse de Réseaux)</b><br>
-                        Projet d'analyse de données de réseaux et de scraping mené dans le cadre de la Digital Methods Initiative (DMI 2022) à l'Université d'Amsterdam, axé sur la cartographie du débat autour du Pass Sanitaire Italien. En savoir plus sur la documentation officielle du projet : <a href="https://www.digitalmethods.net/Dmi/CrawlingItalianGreenPassDebate" target="_blank">Crawling Italian Green Pass Debate</a>.
-                        <br>
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtaJkv6UpJrVDypwTrvPLo7FOSNJMvdA9LRLy-x0MU8w&s" alt="Évolution temporelle du débat sur le Green Pass Italien - DMI" class="project-img">
-                    </li>
-                </ul>
+                    </div>
+
+                    <div class="project-card">
+                        <h3>Crawling Italian Green Pass Debate</h3>
+                        <p>
+                            Analyse de réseaux et web scraping menés dans le cadre de la DMI 2022 à l'Université d'Amsterdam. Documentation : <a href="https://www.digitalmethods.net/Dmi/CrawlingItalianGreenPassDebate" target="_blank">Crawling Italian Green Pass Debate</a>.
+                        </p>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtaJkv6UpJrVDypwTrvPLo7FOSNJMvdA9LRLy-x0MU8w&s" alt="Évolution temporelle du débat - DMI" class="project-img">
+                    </div>
+
+                </div>
             </section>
 
             <!-- Compétences & Charts -->
