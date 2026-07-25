@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abdourahmane Tintou Kamara - Data Scientist</title>
+    
+    <!-- Meta tags / Open Graph -->
+    <meta name="description" content="Portfolio et CV de Abdourahmane Tintou Kamara, Data Scientist">
+    <meta property="og:title" content="Abdourahmane Tintou Kamara, Data Scientist">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://i.ibb.co/tDNd2KK/cropped-image-1.png">
+    <meta property="og:url" content="https://abdourahmanekamara.github.io/index.html">
+    <meta name="theme-color" content="#0f172a">
+    <link rel="canonical" href="https://abdourahmanekamara.github.io/index.html">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VMJ3LQKJ6E"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-VMJ3LQKJ6E');
+    </script>
+
+    <!-- Google Fonts & CanvasJS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
+
+    <script type="text/javascript">
+    window.onload = function () {
+        var chart = new CanvasJS.Chart("chartContainer", {
+            backgroundColor: "transparent",
+            animationEnabled: true,
+            title: {
+                text: "Programming Languages",
+                fontColor: "#f8fafc",
+                fontFamily: "Inter",
+                fontSize: 18,
+                horizontalAlign: "left"
+            },
+            data: [{
+                type: "doughnut",
+                startAngle: 60,
+                innerRadius: "60%",
+                indexLabelFontSize: 13,
+                indexLabelFontColor: "#94a3b8",
+                indexLabelFontFamily: "Inter",
+                indexLabel: "{label} - #percent%",
+                radius: "80%",
+                toolTipContent: "<b>{label}:</b> {y} (#percent%)",
+                dataPoints: [
+                    { y: 7, label: "Python", color: "#3b82f6" },
+                    { y: 6, label: "SQL", color: "#06b6d4" },
+                    { y: 2, label: "Bash", color: "#64748b" },
+                    { y: 1, label: "PySpark", color: "#f97316" },
+                    { y: 4, label: "R", color: "#2563eb" },
+                    { y: 2, label: "SAS", color: "#8b5cf6" }
+                ]
+            }]
+        });
+        chart.render();
+
+        var barchart = new CanvasJS.Chart("barchartContainer", {
+            backgroundColor: "transparent",
+            animationEnabled: true,
+            title: {
+                text: "Tools & Softwares",
+                fontColor: "#f8fafc",
+                fontFamily: "Inter",
+                fontSize: 18,
+                horizontalAlign: "left"
+            },
+            axisX: {
+                labelFontColor: "#94a3b8",
+                labelFontFamily: "Inter",
+                tickColor: "transparent",
+                lineColor: "transparent"
+            },
+            axisY2: {
+                title: "years of experience",
+                titleFontColor: "#64748b",
+                titleFontSize: 12,
+                labelFontColor: "#94a3b8",
+                gridColor: "#334155"
+            },
+            data: [{
+                type: "bar",
+                axisYType: "secondary",
+                color: "#38bdf8",
+                indexLabelFontColor: "#f8fafc",
+                indexLabel: "{y}",
+                dataPoints: [
+                    { label: "Gephi", y: 1 },
+                    { label: "Looker Studio", y: 1 },
+                    { label: "DSS Dataiku", y: 1 },
+                    { label: "Azure", y: 1 },
+                    { label: "GCP", y: 1 },
+                    { label: "Databricks", y: 1 },
+                    { label: "Rapidminer", y: 1 },
+                    { label: "Anaconda", y: 2 },
+                    { label: "R Studio", y: 3 },
+                    { label: "Postgres SQL", y: 4 },
+                    { label: "Jupyter", y: 4 }
+                ]
+            }]
+        }); 
+        barchart.render();
+    }
+    </script>
+
+    <style>
+        :root {
+            --bg-main: #0f172a;
+            --bg-card: #1e293b;
+            --accent: #38bdf8;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border: #334155;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            gap: 24px;
+        }
+
+        /* Sidebar Style */
+        .sidebar {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 32px 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            height: fit-content;
+            position: sticky;
+            top: 20px;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-image: url("https://i.ibb.co/3mnkp7SK/10120866-1359.jpg");
+            background-size: cover;
+            background-position: center;
+            border: 3px solid var(--accent);
+            margin-bottom: 20px;
+        }
+
+        .sidebar h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 8px;
+        }
+
+        .sidebar h1 a {
+            color: var(--text-main);
+            text-decoration: none;
+        }
+
+        .sidebar .title {
+            color: var(--accent);
+            font-weight: 500;
+            font-size: 1rem;
+            margin-bottom: 24px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .social-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            background-color: var(--border);
+            color: var(--accent);
+            transition: all 0.2s ease;
+        }
+
+        .social-btn:hover {
+            background-color: var(--accent);
+            color: var(--bg-main);
+            transform: translateY(-2px);
+        }
+
+        .social-btn svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        /* Main Content Style */
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 28px;
+        }
+
+        .card h2 {
+            font-size: 1.25rem;
+            color: var(--accent);
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        p, li {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Timeline Lists */
+        .timeline-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .timeline-list li {
+            position: relative;
+            padding-left: 20px;
+            border-left: 2px solid var(--border);
+        }
+
+        .timeline-list li::before {
+            content: '';
+            position: absolute;
+            left: -5px;
+            top: 6px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: var(--accent);
+        }
+
+        .timeline-list b {
+            color: var(--text-main);
+            display: inline-block;
+            margin-right: 8px;
+        }
+
+        /* Skills Tags */
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 24px;
+            list-style: none;
+        }
+
+        .skill-tag {
+            background-color: rgba(56, 189, 248, 0.1);
+            color: var(--accent);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .charts-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                position: relative;
+                top: 0;
+            }
+
+            .charts-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Section Profil Sidebar -->
+        <aside class="sidebar">
+            <div class="profile-img"></div>
+            <h1><a href="index.html">Abdourahmane<br>Tintou Kamara</a></h1>
+            <div class="title">Data Scientist</div>
+            
+            <div class="social-links">
+                <!-- WhatsApp -->
+                <a href="http://wa.me/+221710423866" target="_blank" class="social-btn" title="WhatsApp">
+                    <svg viewBox="0 0 512 512"><path d="M 469.257812 250.492188 C 469.257812 365.242188 375.507812 458.269531 259.839844 458.269531 C 223.132812 458.269531 188.652344 448.878906 158.636719 432.4375 L 42.703125 469.257812 L 80.492188 357.746094 C 61.4375 326.449219 50.460938 289.703125 50.460938 250.476562 C 50.476562 135.726562 144.199219 42.703125 259.867188 42.703125 C 375.523438 42.730469 469.257812 135.742188 469.257812 250.492188 Z M 259.824219 75.832031 C 162.753906 75.832031 83.789062 154.199219 83.789062 250.535156 C 83.789062 288.757812 96.253906 324.140625 117.324219 352.933594 L 95.347656 417.792969 L 162.976562 396.304688 C 190.792969 414.550781 224.078125 425.179688 259.824219 425.179688 C 356.898438 425.179688 435.886719 346.828125 435.886719 250.492188 C 435.917969 154.199219 356.910156 75.832031 259.824219 75.832031 Z M 365.589844 298.355469 C 364.285156 296.253906 360.863281 294.972656 355.742188 292.414062 C 350.636719 289.855469 325.367188 277.546875 320.679688 275.875 C 315.949219 274.164062 312.527344 273.304688 309.105469 278.40625 C 305.726562 283.511719 295.878906 294.972656 292.859375 298.394531 C 289.867188 301.804688 286.878906 302.234375 281.746094 299.71875 C 276.613281 297.128906 260.0625 291.789062 240.449219 274.445312 C 225.191406 260.925781 214.882812 244.273438 211.90625 239.167969 C 208.890625 234.078125 211.601562 231.324219 214.148438 228.792969 C 216.441406 226.5 219.28125 222.839844 221.851562 219.851562 C 224.425781 216.886719 225.273438 214.785156 226.984375 211.378906 C 228.667969 207.972656 227.820312 205.007812 226.554688 202.433594 C 225.273438 199.875 215.023438 174.839844 210.726562 164.644531 C 206.457031 154.460938 202.183594 156.144531 199.179688 156.144531 C 196.191406 156.144531 192.769531 155.726562 189.347656 155.726562 C 185.925781 155.726562 180.363281 156.964844 175.675781 162.070312 C 170.988281 167.175781 157.71875 179.484375 157.71875 204.550781 C 157.71875 229.640625 176.089844 253.832031 178.664062 257.222656 C 181.25 260.605469 214.1875 313.722656 266.363281 334.113281 C 318.5625 354.492188 318.5625 347.691406 327.964844 346.828125 C 337.398438 345.964844 358.34375 334.519531 362.601562 322.640625 C 366.882812 310.707031 366.882812 300.480469 365.589844 298.355469 Z"/></svg>
+                </a>
+                <!-- Email -->
+                <a href="mailto:kamaraab29@gmail.com" target="_blank" class="social-btn" title="Email">
+                    <svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg>
+                </a>
+                <!-- GitHub -->
+                <a href="https://github.com/abdourahmanekamara" target="_blank" class="social-btn" title="GitHub">
+                    <svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Section Contenu principal -->
+        <main class="main-content">
+            
+            <!-- About Me -->
+            <section class="card">
+                <h2>About Me</h2>
+                <p>With several years of experience as a full-time Data Scientist and Research Intern in both Lille and Paris regions, I followed various trainings in the fields of Econometrics, Digital humanities, Computer Science, and Big Data. I am interested in topics like web scraping, neural networks, network analysis, and Natural Language Processing (NLP).</p>
+            </section>
+
+            <!-- Companies -->
+            <section class="card">
+                <h2>Companies</h2>
+                <ul class="timeline-list">
+                    <li><b>Nov 2019</b> Full-time Data Scientist at Coyote System SAS, Suresnes, France</li>
+                    <li><b>Feb 2018</b> Full-time Junior Data Scientist at Fidzup, Clichy, France</li>
+                    <li><b>Feb 2017</b> Intern Data Scientist & Full-time Data Scientist at Praedic, Lille, France</li>
+                    <li><b>Jan 2016</b> Intern Researcher at Centre Lillois d'études et de recherches sociologiques et économiques (CLERSE), Cité scientifique, Villeneuve d'Ascq, France. Find my publication <a href="https://drive.google.com/file/d/19Ld9iGUnOSTjP1AAw13maMfzx4NPFG8u/view?usp=drivesdk" target="_blank">here</a>.</li>
+                </ul>
+            </section>
+
+            <!-- Education -->
+            <section class="card">
+                <h2>Education</h2>
+                <ul class="timeline-list">
+                    <li><b>Jan 2023 - May 2023</b> GRETA certification in Python Software Development and Big Data at Lycée Professionnel Claude Garamond, France. View certification <a href="https://drive.google.com/file/d/177YHwtItW7aYMraqV_7r9lejvVM0jELg/view?usp=drivesdk" target="_blank">here</a>.</li>
+                    <li><b>Sep 2021 - Sep 2022</b> Master's degree in Data Science and Digital Society at Gustave Eiffel University with ESIEE Paris Engineering School.</li>
+                    <li><b>Sep 2015 - Sep 2017</b> Master's degree in Applied Econometrics <b>(with distinction)</b> at Sciences and Technology University of Lille, France.</li>
+                </ul>
+            </section>
+
+            <!-- Skills & Charts -->
+            <section class="card">
+                <h2>Skills</h2>
+                <ul class="skills-grid">
+                    <li class="skill-tag">Big Data</li>
+                    <li class="skill-tag">Web Scraping</li>
+                    <li class="skill-tag">ML Engineering</li>
+                    <li class="skill-tag">Data Engineering</li>
+                    <li class="skill-tag">NLP & Text Mining</li>
+                    <li class="skill-tag">Business Intelligence</li>
+                    <li class="skill-tag">Data Visualization</li>
+                    <li class="skill-tag">Network Analysis</li>
+                    <li class="skill-tag">Econometrics</li>
+                    <li class="skill-tag">Data Management</li>
+                    <li class="skill-tag">Team Management</li>
+                </ul>
+
+                <div class="charts-container">
+                    <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+                    <div id="barchartContainer" style="height: 300px; width: 100%;"></div>
+                </div>
+            </section>
+
+            <!-- Languages -->
+            <section class="card">
+                <h2>Languages</h2>
+                <ul class="skills-grid">
+                    <li class="skill-tag" style="background-color: var(--border); color: var(--text-main);">Français (Langue maternelle)</li>
+                    <li class="skill-tag" style="background-color: var(--border); color: var(--text-main);">English (Fluent)</li>
+                    <li class="skill-tag" style="background-color: var(--border); color: var(--text-main);">Español (Nociones)</li>
+                </ul>
+            </section>
+
+        </main>
+    </div>
+
+</body>
+</html>
