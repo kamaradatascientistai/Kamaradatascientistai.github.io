@@ -148,7 +148,7 @@
             background-color: var(--bg-card);
             border: 1px solid var(--border);
             border-radius: 16px;
-            padding: 32px 24px;
+            padding: 0 24px 32px 24px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -156,17 +156,33 @@
             height: fit-content;
             position: sticky;
             top: 24px;
+            overflow: hidden;
+        }
+
+        .cover-img {
+            width: calc(100% + 48px);
+            height: 130px;
+            background-image: url("https://miro.medium.com/v2/resize:fit:1400/0*j1pqHqSkGg-sS2x4.png");
+            background-size: cover;
+            background-position: center;
+            margin-left: -24px;
+            margin-right: -24px;
+            border-bottom: 1px solid var(--border);
         }
 
         .profile-img {
-            width: 150px;
-            height: 150px;
+            width: 140px;
+            height: 140px;
             border-radius: 50%;
             background-image: url("https://i.ibb.co/tDNd2KK/cropped-image-1.png");
             background-size: cover;
             background-position: center;
-            border: 3px solid var(--accent);
-            margin-bottom: 20px;
+            border: 4px solid var(--bg-card);
+            box-shadow: 0 0 0 2px var(--accent);
+            margin-top: -70px;
+            margin-bottom: 16px;
+            position: relative;
+            z-index: 1;
         }
 
         .sidebar h1 {
@@ -224,7 +240,7 @@
             display: flex;
             flex-direction: column;
             gap: 24px;
-            min-width: 0; /* Empêche les débordements Flexbox */
+            min-width: 0;
         }
 
         .card {
@@ -296,7 +312,6 @@
             -webkit-overflow-scrolling: touch;
         }
 
-        /* Personnalisation de la barre de défilement du carrousel */
         .carousel-container::-webkit-scrollbar {
             height: 8px;
         }
@@ -316,7 +331,7 @@
         }
 
         .project-card {
-            flex: 0 0 350px; /* Largeur fixe pour chaque carte */
+            flex: 0 0 350px;
             scroll-snap-align: start;
             background-color: rgba(15, 23, 42, 0.6);
             border: 1px solid var(--border);
@@ -390,7 +405,7 @@
             }
 
             .project-card {
-                flex: 0 0 85%; /* Plus large sur écran mobile */
+                flex: 0 0 85%;
             }
         }
     </style>
@@ -398,8 +413,9 @@
 <body>
 
     <div class="container">
-        <!-- Sidebar -->
+        <!-- Sidebar avec photo de couverture -->
         <aside class="sidebar">
+            <div class="cover-img"></div>
             <div class="profile-img"></div>
             <h1><a href="index.html">Abdourahmane<br>Tintou Kamara</a></h1>
             <div class="title">Data Scientist</div>
@@ -475,7 +491,7 @@
                 </ul>
             </section>
 
-            <!-- Projets (Mode Carrousel Défilement Horizontal) -->
+            <!-- Projets -->
             <section class="card">
                 <h2>Projets</h2>
                 <div class="carousel-container">
@@ -542,4 +558,4 @@
     </div>
 
 </body>
-</html>
+    </html>
